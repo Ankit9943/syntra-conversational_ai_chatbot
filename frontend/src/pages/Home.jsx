@@ -59,7 +59,7 @@ const Home = ({ theme, setTheme }) => {
             createdAt: data.chat.lastActivity || Date.now(),
           })
         );
-        toast.success("Chat created successfully!");
+
         closeCreateChatModal();
         if (showWelcome) setShowWelcome(false);
       }
@@ -245,7 +245,6 @@ const Home = ({ theme, setTheme }) => {
         content: input.trim(),
       });
     }
-    toast.success("Message sent!");
   };
 
   return (
