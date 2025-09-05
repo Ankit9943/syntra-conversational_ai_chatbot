@@ -1,0 +1,19 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --primary-color: #6a5af9;
+  --card-bg-color: #f3f4f6;
+  --input-bg-color: #ffffff;
+  --input-border-color: #d1d5db;
+  --btn-text-color: #ffffff;
+}
+
+.dark {
+  --background-color: #111827;
+  --text-color: #ffffff;
+  --primary-color: #818cf8;
+  --card-bg-color: #1f2937;
+  --input-bg-color: #374151;
+  --input-border-color: #4b5563;
+  --btn-text-color: #1f2937;
+}
