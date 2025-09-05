@@ -19,7 +19,7 @@ const Register = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/register",
+        "https://syntra-conversational-ai-chatbot.onrender.com/api/auth/register",
         {
           fullName: {
             firstName: data.firstName,

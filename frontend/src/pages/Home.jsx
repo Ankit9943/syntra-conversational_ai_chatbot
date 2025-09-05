@@ -46,7 +46,7 @@ const Home = ({ theme, setTheme }) => {
     if (!title) return;
     try {
       const { data } = await axios.post(
-        `http://localhost:3000/api/chat`,
+        `https://syntra-conversational-ai-chatbot.onrender.com/api/chat`,
         { title },
         { withCredentials: true }
       );
@@ -97,9 +97,12 @@ const Home = ({ theme, setTheme }) => {
     if (alreadyLoaded) return;
 
     axios
-      .get(`http://localhost:3000/api/message/${currentChatId}`, {
-        withCredentials: true,
-      })
+      .get(
+        `https://syntra-conversational-ai-chatbot.onrender.com/api/message/${currentChatId}`,
+        {
+          withCredentials: true,
+        }
+      )
       .then(({ data }) => {
         if (Array.isArray(data?.messages)) {
           dispatch(
@@ -122,9 +125,12 @@ const Home = ({ theme, setTheme }) => {
   useEffect(() => {
     const fetchChats = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3000/api/chat", {
-          withCredentials: true,
-        });
+        const { data } = await axios.get(
+          "https://syntra-conversational-ai-chatbot.onrender.com/api/chat",
+          {
+            withCredentials: true,
+          }
+        );
         const serverChats = Array.isArray(data?.chats) ? data.chats : [];
         if (serverChats.length) {
           dispatch(
@@ -159,7 +165,10 @@ const Home = ({ theme, setTheme }) => {
     };
     fetchChats();
 
-    const tempSocket = io("http://localhost:3000", { withCredentials: true });
+    const tempSocket = io(
+      "https://syntra-conversational-ai-chatbot.onrender.com",
+      { withCredentials: true }
+    );
 
     tempSocket.on("ai-response", (messagePayload) => {
       if (messagePayload?.chat && messagePayload?.content) {

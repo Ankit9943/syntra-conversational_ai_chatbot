@@ -17,7 +17,7 @@ const Login = () => {
     // console.log("Form Data:", data);
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/login",
+        "https://syntra-conversational-ai-chatbot.onrender.com/api/auth/login",
         {
           email: data.email,
           password: data.password,
